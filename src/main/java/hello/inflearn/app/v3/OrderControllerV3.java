@@ -18,12 +18,12 @@ public class OrderControllerV3 {
         TraceStatus status = null;
         try{
             status = trace.begin(("OrderContoller.Request()"));
-            orderService.orderItem(itemId);
+            orderService.orderItem(itemId); // 핵심 기능
             trace.end(status);
             return "ok";
         } catch (Exception e){
             trace.exception(status, e);
-            throw e; // 예외를 꼭 다시 던져주어야 함.
+            throw e; 
         }
     }
 }
